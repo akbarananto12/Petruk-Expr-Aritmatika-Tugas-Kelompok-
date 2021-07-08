@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-
 bool operand(char a){
 int asci = (int)a;
 if (asci >= 48 && asci <= 57){
@@ -18,7 +17,7 @@ if (!(asci >= 48 && asci <= 57)){
 } else {return false;}
 
 }
-
+    
 int main(){
 string infix2,simpan[100],infix;
 int jumlah = 0,panjang;
@@ -30,18 +29,21 @@ for(int i = 0; i<panjang;i++){
         infix += infix2[i];
     }
 }
-
-panjang = infix.length();
-for (int i = 0;i<panjang;i++){
-
-if (operand(infix[i])){
-    if (operand(infix[i])&&operand(infix[i+1])){
+    
+if (is_operator(infix[i])){
+    if(is_operator(infix[i]) && infix[i+1] == '-' && infix[i+2] == '('){
+        simpan[jumlah+1] = infix[i+1];
+        simpan[jumlah+2] = '*';
         simpan[jumlah] = infix[i];
-        simpan[jumlah] += infix[i+1];
-        jumlah++;
+        simpan[jumlah+1] += "1";
+        jumlah+=3;
         i++;
-    } else if (operand(infix[i])&& !(operand(infix[i+1]))){
+    }else if (is_operator(infix[i])&& infix[i+1] == '-' && operand(infix[i+2])&&infix[i]!= ')'){
+        simpan[jumlah+1] = infix[i+1];
         simpan[jumlah] = infix[i];
-        jumlah++;
+        simpan[jumlah+1]+= "1";
+        simpan[jumlah+2] = '*';
+        jumlah+=3;
+        i++;
+
     }
-}
