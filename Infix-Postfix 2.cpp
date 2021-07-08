@@ -79,5 +79,37 @@ if (a == '/' ||a == '*' ||a == '-' || a == '+' || a == '%'){
 
 #KARINA 1
 
+if (is_operator2(simpan[i][0])&& simpan[i]!="-1"&&simpan[i].length()==1){
+while(!stackop.empty() && prioritas(simpan[i][0]) <= prioritas(stackop.top())) {
+simpan2[bantu2] = stackop.top();
+stackop.pop();
+bantu2++;
+
+}
+stackop.push(simpan[i][0]);
+}
+}
+
+while(!stackop.empty()){
+    simpan2[bantu2] = stackop.top();
+    stackop.pop();
+    bantu2++;
+}
+
+
+
+
+for (int i = 0;i<=bantu2;i++){
+    if(i==0){
+        cout << "Print : ";
+    }
+    if(simpan2[i].length()>=1){
+        cout << simpan2[i] << " ";
+    }
+}
+
+}
+
+
 
 
