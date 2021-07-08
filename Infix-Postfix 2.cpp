@@ -49,5 +49,35 @@ if (a == '/' ||a == '*' ||a == '-' || a == '+' || a == '%'){
 
 #ASSYIFA 1
 
+}else if (infix[i] == '-' &&infix[i+1]=='(' && i == 0){
+        simpan[jumlah] = infix[i];
+        simpan[jumlah] += '1';
+        simpan[jumlah+1] = '*';
+        jumlah+=2;
+
+    }else if (infix[i]=='-'&& operand(infix[i+1])&& !operand(infix[i+2]) && i == 0){
+        simpan[jumlah] = infix[i];
+        simpan[jumlah] += infix[i+1];
+        jumlah+=2;
+        i++;
+
+    }else if (infix[i]=='-'&& operand(infix[i+1])&& operand(infix[i+2]) && i == 0){
+        simpan[jumlah] = infix[i];
+        simpan[jumlah] += infix[i+1];
+        simpan[jumlah] += infix[i+2];
+        jumlah+=3;
+        i+=2;
+
+    }else if (is_operator(infix[i])){
+        simpan[jumlah] = infix[i];
+        jumlah++;
+
+    }
+}
+
+}
+
+#KARINA 1
+
 
 
