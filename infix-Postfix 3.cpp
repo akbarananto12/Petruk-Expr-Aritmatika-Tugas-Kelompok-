@@ -155,5 +155,14 @@ while(!stackop.empty()){
     bantu2++;
 }
 
+float uhuk = 0;
+if(res==0){
+for (int i = 0;i<=bantu2;i++){
+    if(operand(simpan2[i][0])){
+        float u ;
+        u = std::stod(simpan2[i]);
+        angka.push(u);
+        uhuk++;
 
-#ASSYIFA 1
+    }
+
