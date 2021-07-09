@@ -77,7 +77,29 @@ if (operand(infix[i])){
     }
 }
 
+if (is_operator(infix[i])){
+    if(is_operator(infix[i]) && infix[i+1] == '-' && infix[i+2] == '('){
+        simpan[jumlah+1] = infix[i+1];
+        simpan[jumlah+2] = '*';
+        simpan[jumlah] = infix[i];
+        simpan[jumlah+1] += "1";
+        jumlah+=3;
+        i++;
+    }else if (is_operator(infix[i])&& infix[i+1] == '-' && operand(infix[i+2])&&infix[i]!= ')'){
+        simpan[jumlah+1] = infix[i+1];
+        simpan[jumlah] = infix[i];
+        simpan[jumlah+1]+= "1";
+        simpan[jumlah+2] = '*';
+        jumlah+=3;
+        i++;
+    }else if (is_operator(infix[i])){
+        simpan[jumlah] = infix[i];
+        jumlah++;
 
+    }
+}
+
+}
 
 
 string simpan2[100];
