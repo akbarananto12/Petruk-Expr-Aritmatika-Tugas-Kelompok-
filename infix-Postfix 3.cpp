@@ -184,4 +184,15 @@ if (is_operator2(simpan2[i][0])&&uhuk>=2){
             else {angka.push(a/b);}
         }if (simpan2[i][0]=='%'){
             int a1,b1;
+            a1 = a;
+            b1= b;
+            if (a>b){
+            angka.push(a1%b1);}
+            else {angka.push(b1%a1);}
+        }
+    } res = angka.top();
+    } }
+
+cout << res << endl;
+}
 
