@@ -75,7 +75,38 @@ if (a == '/' ||a == '*' ||a == '-' || a == '+' || a == '%'){
 }
 
 
-#KARINA 1
+string simpan2[100];
+int bantu2 = 0;
+for(int i = 0; i <= jumlah; i++) {
+if (simpan[i].length()>1 || operand(simpan[i][0])){
+
+if (simpan[i] == "-1"){
+    simpan2[bantu2] = simpan[i];
+    bantu2++;
+}
+if (simpan[i].length()>1&& simpan[i]!="-1"){
+    simpan2[bantu2] = simpan[i];
+    bantu2++;
+}
+if (simpan[i].length()==1){
+    string sementara = simpan[i];
+    if (simpan[i].length()==1 && operand(sementara[0])){
+        simpan2[bantu2] = simpan[i];
+        bantu2++;
+    }
+} }
+
+else if(simpan[i] == "("){
+    stackop.push('(');
+   }
+
+else if(simpan[i] == ")"){
+    while(stackop.top() != '('){
+        simpan2[bantu2] = stackop.top();
+        stackop.pop();
+        bantu2++;}
+    stackop.pop();
+}
 
 if (is_operator2(simpan[i][0])&& simpan[i]!="-1"&&simpan[i].length()==1){
 while(!stackop.empty() && prioritas(simpan[i][0]) <= prioritas(stackop.top())) {
