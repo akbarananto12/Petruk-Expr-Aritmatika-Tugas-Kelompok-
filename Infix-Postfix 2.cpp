@@ -47,8 +47,6 @@ if (a == '/' ||a == '*' ||a == '-' || a == '+' || a == '%'){
 
 }
 
-#ASSYIFA 1
-
 }else if (infix[i] == '-' &&infix[i+1]=='(' && i == 0){
         simpan[jumlah] = infix[i];
         simpan[jumlah] += '1';
@@ -96,9 +94,6 @@ while(!stackop.empty()){
     bantu2++;
 }
 
-
-
-
 for (int i = 0;i<=bantu2;i++){
     if(i==0){
         cout << "Print : ";
@@ -109,7 +104,3 @@ for (int i = 0;i<=bantu2;i++){
 }
 
 }
-
-
-
-
