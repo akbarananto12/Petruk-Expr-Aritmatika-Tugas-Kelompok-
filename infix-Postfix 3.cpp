@@ -62,6 +62,23 @@ for(int i = 0; i<panjang;i++){
     }
 }
 
+panjang = infix.length();
+for (int i = 0;i<panjang;i++){
+
+if (operand(infix[i])){
+    if (operand(infix[i])&&operand(infix[i+1])){
+        simpan[jumlah] = infix[i];
+        simpan[jumlah] += infix[i+1];
+        jumlah++;
+        i++;
+    } else if (operand(infix[i])&& !(operand(infix[i+1]))){
+        simpan[jumlah] = infix[i];
+        jumlah++;
+    }
+}
+
+
+
 
 string simpan2[100];
 int bantu2 = 0;
