@@ -165,4 +165,13 @@ for (int i = 0;i<=bantu2;i++){
         uhuk++;
 
     }
+    
+if (is_operator2(simpan2[i][0])&&uhuk>=2){
+        float a=0,b=0;
+        a = angka.top();
+        angka.pop();
+        b = angka.top();
+        angka.pop();
+        if (simpan2[i][0]=='*'){
+            angka.push(a*b);
 
