@@ -174,4 +174,14 @@ if (is_operator2(simpan2[i][0])&&uhuk>=2){
         angka.pop();
         if (simpan2[i][0]=='*'){
             angka.push(a*b);
+        }if (simpan2[i][0]=='-'){
+            angka.push(b-a);
+        }if (simpan2[i][0]=='+'){
+            angka.push(a+b);
+        }if (simpan2[i][0]=='/'){
+            if(b/a > a/b){
+            angka.push(b/a);}
+            else {angka.push(a/b);}
+        }if (simpan2[i][0]=='%'){
+            int a1,b1;
 
